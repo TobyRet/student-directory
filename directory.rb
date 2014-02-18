@@ -1,5 +1,5 @@
 puts "The students of the February cohort at Makers Academy"
-
+puts "-----------------------------------------------------"
 puts "Mario Gintili"
 puts "Mikhail Dubov"
 puts "Karolis Noreika"
@@ -23,3 +23,6 @@ puts "Tyler Rollins"
 puts "Richard Curteis"
 puts "Anna Yanova"
 puts "Andrew Cumine"
+print "Overall, we have "
+print 23
+puts " great students"
