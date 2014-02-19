@@ -2,29 +2,29 @@
 
 
 students = [
-	{:name => "Mario Gintili", :cohort => :February},
-	{:name => "Mikhail Dubov", :cohort => :February},
-	{:name => "Karolis Noreika", :cohort => :February},
-	{:name => "Michael Sidon", :cohort => :February},
- 	{:name => "Charles De Barros", :cohort => :February},
- 	{:name => "Ruslan Vikhor", :cohort => :February},
- 	{:name => "Toby Retallick", :cohort => :February},
- 	{:name => "Mark Mekhaiel", :cohort => :February},
- 	{:name => "Sarah Young", :cohort => :February},
- 	{:name => "Hannah Wight", :cohort => :February},
- 	{:name => "Khushkaran Singh", :cohort => :February},
- 	{:name => "Rick Brunstedt", :cohort => :February},
- 	{:name => "Manjit Singh", :cohort => :February},
- 	{:name => "Alex Gaudiosi", :cohort => :February},
- 	{:name => "Ross Hepburn", :cohort => :February},
- 	{:name => "Natascia Marchese", :cohort => :February},
- 	{:name => "Tiffanie Chia", :cohort => :February},
- 	{:name => "Matthew Thomas", :cohort => :February},
- 	{:name => "Freddy McGroarty", :cohort => :February},
- 	{:name => "Tyler Rollins", :cohort => :February},
- 	{:name => "Richard Curteis", :cohort => :February},
- 	{:name => "Anna Yanova", :cohort => :February},
- 	{:name => "Andrew Cumine", :cohort => :February}
+	{:name => "Mario Gintili", :cohort => :February, :age => 23},
+	{:name => "Mikhail Dubov", :cohort => :February, :age => 24},
+	{:name => "Karolis Noreika", :cohort => :February, :age => 25},
+	{:name => "Michael Sidon", :cohort => :February, :age => 26},
+ 	{:name => "Charles De Barros", :cohort => :February, :age => 23},
+ 	{:name => "Ruslan Vikhor", :cohort => :February, :age => 33},
+ 	{:name => "Toby Retallick", :cohort => :February, :age => 34},
+ 	{:name => "Mark Mekhaiel", :cohort => :February, :age => 35},
+ 	{:name => "Sarah Young", :cohort => :February, :age => 36},
+ 	{:name => "Hannah Wight", :cohort => :February, :age => 37},
+ 	{:name => "Khushkaran Singh", :cohort => :February, :age => 45},
+ 	{:name => "Rick Brunstedt", :cohort => :February, :age => 34},
+ 	{:name => "Manjit Singh", :cohort => :February, :age => 34},
+ 	{:name => "Alex Gaudiosi", :cohort => :February, :age => 56},
+ 	{:name => "Ross Hepburn", :cohort => :February, :age => 34},
+ 	{:name => "Natascia Marchese", :cohort => :February, :age => 36},
+ 	{:name => "Tiffanie Chia", :cohort => :February, :age => 32},
+ 	{:name => "Matthew Thomas", :cohort => :February, :age => 21},
+ 	{:name => "Freddy McGroarty", :cohort => :February, :age => 6},
+ 	{:name => "Tyler Rollins", :cohort => :February, :age => 7},
+ 	{:name => "Richard Curteis", :cohort => :February, :age => 2},
+ 	{:name => "Anna Yanova", :cohort => :February, :age => 67},
+ 	{:name => "Andrew Cumine", :cohort => :February, :age => 78},
 ]
 
 
@@ -50,15 +50,7 @@ end
 def print(students)
 	
 	students.each_with_index do |student|
-		# name begins with a
-		#if student[:name].chr.downcase == 'a'
-			#puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
-		#end
-
-		# name shorter than twelve characters
-		if student[:name].length < 12
-			puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
-		end
+		puts "#{students.index(student) + 1}. #{student[:name]}, #{student[:age]} years old, #{student[:cohort]} cohort)" 
 	end
 end
 
