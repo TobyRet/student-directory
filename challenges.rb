@@ -1,6 +1,6 @@
 # students array
 
-
+=begin
 students = [
 	{:name => "Mario Gintili", :cohort => :February},
 	{:name => "Mikhail Dubov", :cohort => :February},
@@ -26,18 +26,41 @@ students = [
  	{:name => "Anna Yanova", :cohort => :February},
  	{:name => "Andrew Cumine", :cohort => :February}
 ]
-
+=end
 
 
 def input_students
-	puts "Please enter the name of the students."
-	puts "To finish, hit return twice."
 	students = []
+	
+	# Retreive user input
+	puts "Please enter the name of the student."
 	name = gets.chomp
-	while !name.empty? do 
-		students << {:name => name, :cohort => :February}
-		puts "Now we have #{students.length} students"
-		name = gets.chomp
+	puts "Please enter the cohort for #{name}"
+	cohort = gets.chomp
+
+	# Set default values if user input is nil
+	name = "Name unknown." if name.empty?
+	cohort = "Cohort unknown." if name.empty?
+
+	# Loop adds student information to students array
+	while !name.empty? && !cohort.empty? do 
+		students << {:name => name, :cohort => cohort}
+		puts "You have added #{name} to the #{cohort} cohort."
+		puts "Now we have #{students.length} students."
+		
+		# add more students
+		puts "----------------------------------------------"
+		puts "Would you like to add another student? Type 'yes' or 'no'."
+		response = gets.chomp
+		puts "----------------------------------------------"
+		if response == 'yes'.downcase
+			puts "Please enter the name of the student."
+			name = gets.chomp
+			puts "Please enter the cohort for #{name}"
+			cohort = gets.chomp
+		else response == 'no'.downcase
+			break
+		end
 	end
 	students
 end
@@ -47,17 +70,26 @@ def print_header
 	puts "-------------------------------------------"
 end
 
-def print(students)
-	
+def print(students)	
 	students.each_with_index do |student|
-		# name begins with a
-		#if student[:name].chr.downcase == 'a'
-			#puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
-		#end
+		puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
+	end
+end
 
-		# name shorter than twelve characters
-		if student[:name].length < 12
-			puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
+# list students by cohort
+def print_cohort(students)
+	cohort_list = []
+	students.each do |student|
+		cohort_list << student[:cohort]
+	end
+	cohort_list = cohort_list.uniq
+	
+	cohort_list.each do |cohort|
+		puts cohort
+		students.each do |student|
+			if student[:cohort] == cohort
+				puts student[:name]
+			end
 		end
 	end
 end
@@ -66,9 +98,10 @@ def print_footer(names)
 	puts "Overall, we have #{names.length} great students."
 end
 
-#students = input_students
-print_header
-print(students)
-print_footer(students)
+students = input_students
+#print_header
+#print(students)
+print_cohort(students)
+#print_footer(students)
 
 
