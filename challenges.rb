@@ -30,15 +30,19 @@ students = [
 
 
 def input_students
-	puts "Please enter the name of the student."
 	students = []
+	puts "Please enter the name of the student."
 	name = gets.chomp
 	puts "Please enter the cohort for #{name}"
 	cohort = gets.chomp
 	while !name.empty? && !cohort.empty? do 
 		students << {:name => name, :cohort => cohort}
-		puts "you have added #{name} to the #{cohort} cohort"
-		puts "Now we have #{students.length} students"
+		puts "You have added #{name} to the #{cohort} cohort."
+		puts "Now we have #{students.length} students."
+		puts "Please enter the name of the student."
+		name = gets.chomp
+		puts "Please enter the cohort for #{name}"
+		cohort = gets.chomp
 	end
 	students
 end
