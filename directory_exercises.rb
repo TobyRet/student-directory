@@ -47,11 +47,22 @@ def print_header
 	puts "-------------------------------------------"
 end
 
-# filtering by name first ltter using chars method
+# filtering names by first letter using chars method
+#def print_list(students)
+#	students.each_with_index do |student|
+#		# name begins with a
+#		if student[:name].chars.first.downcase == 'm'
+#			puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
+#		end
+#	end
+#end
+
+# filtering names by first letter using slice method
+
 def print_list(students)
 	students.each_with_index do |student|
 		# name begins with a
-		if student[:name].chars.first.downcase == 'm'
+		if student[:name].chars.slice(0) == 'M'
 			puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
 		end
 	end
