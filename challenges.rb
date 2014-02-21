@@ -78,18 +78,12 @@ end
 
 # list students by cohort
 def print_cohort(students)
-	cohort_list = []
-	students.each do |student|
-		cohort_list << student[:cohort]
-	end
-	cohort_list = cohort_list.uniq
+	cl = students.map {|student| student[:cohort]}
 	
-	cohort_list.each do |cohort|
-		puts cohort
+	cl.uniq.each do |cohort|
+		puts "\n" + cohort.upcase
 		students.each do |student|
-			if student[:cohort] == cohort
-				puts student[:name]
-			end
+			puts student[:name] if student[:cohort] == cohort	
 		end
 	end
 end
