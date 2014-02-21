@@ -47,16 +47,11 @@ def print_header
 	puts "-------------------------------------------"
 end
 
-def print(students)
-	
+# filtering by name first ltter using chars method
+def print_list(students)
 	students.each_with_index do |student|
 		# name begins with a
-		#if student[:name].chr.downcase == 'a'
-			#puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
-		#end
-
-		# name shorter than twelve characters
-		if student[:name].length < 12
+		if student[:name].chars.first.downcase == 'm'
 			puts "#{students.index(student) + 1}. #{student[:name]} (#{student[:cohort]} cohort)" 
 		end
 	end
@@ -68,7 +63,7 @@ end
 
 #students = input_students
 print_header
-print(students)
+print_list(students)
 print_footer(students)
 
 
